@@ -1,6 +1,6 @@
 /**
  * @file BrandWordmark.tsx
- * @description GlasSQL header wordmark image lockup.
+ * @description GlasSQL header lockup: elephant mark + product name.
  */
 import { cn } from "@/lib/cn";
 
@@ -9,17 +9,20 @@ type BrandWordmarkProps = {
   className?: string;
 };
 
-const WORDMARK_ASPECT_RATIO = 4547 / 1074;
-
-export function BrandWordmark({ height = 24, className }: BrandWordmarkProps) {
+export function BrandWordmark({ height = 32, className }: BrandWordmarkProps) {
   return (
-    <img
-      src="/brand/wordmark.png"
-      alt="GlasSQL"
-      width={Math.round(height * WORDMARK_ASPECT_RATIO)}
-      height={height}
-      className={cn("block shrink-0 object-contain select-none", className)}
-      loading="eager"
-    />
+    <span className={cn("inline-flex items-center gap-2 select-none", className)}>
+      <img
+        src="/brand/logo-mark.png"
+        alt=""
+        width={height}
+        height={height}
+        className="block shrink-0 object-contain"
+        loading="eager"
+      />
+      <span className="font-sans text-[17px] font-semibold tracking-[-0.03em] text-[#26251e]">
+        GlasSQL
+      </span>
+    </span>
   );
 }

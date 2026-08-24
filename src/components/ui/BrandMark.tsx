@@ -13,7 +13,7 @@ type BrandMarkProps = {
 export function BrandMark({ size = 26, alt = "GlasSQL", className }: BrandMarkProps) {
   return (
     <img
-      src="/brand/logo.svg"
+      src="/brand/logo-mark.png"
       alt={alt}
       width={size}
       height={size}

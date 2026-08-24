@@ -23,7 +23,7 @@ export function ProductPage() {
           title="Engineered for safe, reproducible data operations."
           lead="GlasSQL replaces loose SQL scratchpads and risky database credentials with versioned query templates, client-side PGlite WASM replicas, and automated query endpoints."
         >
-          <SurfaceButton href="#snapshots" tone="primary" size="md">
+          <SurfaceButton href="#snapshots" tone="dark" size="md">
             <span>Explore Features</span>
             <IconArrowDown className="size-3.5" />
           </SurfaceButton>

@@ -1,6 +1,6 @@
 /**
  * @file ClosingCta.tsx
- * @description Cursor-styled closing CTA band with 36px 400-weight headline and Cursor Orange CTA.
+ * @description Cursor-styled closing CTA band with 36px 400-weight headline and ink primary CTA.
  */
 import { APP_ORIGIN } from "@/config/site";
 import { trackEvent } from "@/lib/analytics";
@@ -42,13 +42,13 @@ export function ClosingCta({
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleOpenApp}
-              className="inline-flex items-center gap-2 rounded-md bg-[#f54e00] px-5 py-2.5 font-sans text-sm font-medium text-white hover:bg-[#d04200] transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-[#26251e] px-5 py-2.5 font-sans text-sm font-medium text-white hover:bg-[#383730] transition-colors"
             >
               <span>{primaryCtaText}</span>
               <IconExternalLink className="size-3.5 text-white/90" />
             </a>
 
-            <SurfaceButton to="/download" tone="dark" size="md">
+            <SurfaceButton to="/download" tone="secondary" size="md">
               <IconDownload className="size-4" />
               <span>{secondaryCtaText}</span>
             </SurfaceButton>

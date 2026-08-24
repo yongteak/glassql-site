@@ -26,7 +26,7 @@ export function SiteHeader() {
           className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           aria-label="GlasSQL Home"
         >
-          <BrandWordmark height={24} />
+          <BrandWordmark />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -64,7 +64,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleOpenAppClick}
-            className="inline-flex items-center gap-1.5 rounded-md bg-[#f54e00] px-4 py-1.5 font-sans text-[14px] font-medium text-white hover:bg-[#d04200] transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-md bg-[#26251e] px-4 py-1.5 font-sans text-[14px] font-medium text-white hover:bg-[#383730] transition-colors"
           >
             <span>Open App</span>
             <IconExternalLink className="size-3 text-white/90" />
@@ -78,7 +78,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleOpenAppClick}
-            className="inline-flex items-center gap-1 rounded-md bg-[#f54e00] px-3 py-1 font-sans text-xs font-medium text-white"
+            className="inline-flex items-center gap-1 rounded-md bg-[#26251e] px-3 py-1 font-sans text-xs font-medium text-white"
           >
             <span>Open App</span>
           </a>

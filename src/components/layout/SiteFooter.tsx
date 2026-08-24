@@ -17,7 +17,7 @@ export function SiteFooter() {
           {/* Brand Col */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block" aria-label="GlasSQL Home">
-              <BrandWordmark height={24} />
+              <BrandWordmark />
             </Link>
             <p className="mt-3 text-xs leading-relaxed text-[#5a5852]">
               Workspace data operations without opening production databases.

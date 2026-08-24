@@ -58,7 +58,7 @@ export function PlatformRow() {
                       href={platform.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-md bg-[#f54e00] px-4 py-2 font-sans text-sm font-medium text-white hover:bg-[#d04200] transition-colors"
+                      className="inline-flex items-center gap-1.5 rounded-md bg-[#26251e] px-4 py-2 font-sans text-sm font-medium text-white hover:bg-[#383730] transition-colors"
                     >
                       <span>{platform.cta}</span>
                       <IconExternalLink className="size-3.5" />

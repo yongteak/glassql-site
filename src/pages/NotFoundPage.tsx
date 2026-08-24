@@ -31,7 +31,7 @@ export function NotFoundPage() {
               href={APP_ORIGIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-[#f54e00] px-4 py-2 font-sans text-sm font-medium text-white hover:bg-[#d04200] transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-[#26251e] px-4 py-2 font-sans text-sm font-medium text-white hover:bg-[#383730] transition-colors"
             >
               <span>Open Web App</span>
               <IconExternalLink className="size-3.5" />

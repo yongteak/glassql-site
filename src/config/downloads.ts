@@ -76,10 +76,10 @@ export const DOWNLOADS: DownloadTarget[] = [
     name: "MCP Workspace Bridge",
     description: "Streamable HTTP & stdio Model Context Protocol for Cursor, VS Code, and Claude.",
     href: "/docs/mcp-workspace-bridge",
-    available: true,
+    available: false,
     stub: false,
     cta: "View MCP Setup",
-    badge: "Cursor & Claude Ready",
+    badge: "Coming Soon",
     command: "npx @glassql/mcp-server --workspace <workspace-id>",
   },
 ];

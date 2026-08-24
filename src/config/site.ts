@@ -10,7 +10,7 @@ export const SITE_NAME = "GlasSQL";
 export const SITE_SUBTITLE = "Workspace Data Operations Platform";
 
 /** Home hero line */
-export const SITE_TAGLINE = "Workspace data operations—without opening production databases.";
+export const SITE_TAGLINE = "Query snapshots—not production.";
 
 /** Default meta description */
 export const SITE_DESCRIPTION =
