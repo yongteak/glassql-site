@@ -67,7 +67,7 @@ function HeroWorkbenchMock({ className }: { className?: string }) {
         <div className="flex items-center gap-2 font-mono text-[11px]">
           <span className="text-[#807d72]">Engine:</span>
           <span className="rounded bg-[#efeee8] border border-[#e6e5e0] px-2 py-0.5 text-[#26251e] font-medium">
-            PGlite WASM · Client-Side
+            Workspace PG (WASM) · Client-Side
           </span>
           <span className="hidden sm:inline-block text-[#cfcdc4]">|</span>
           <span className="hidden sm:inline-flex items-center gap-1 text-[#1f8a65] font-medium">
@@ -683,7 +683,7 @@ function DualRuntimeMock({ className }: { className?: string }) {
           <div className="font-medium text-[#26251e] mb-1">GlasSQL Web (my.glassql.app)</div>
           <ul className="space-y-1 text-[#5a5852] list-disc list-inside">
             <li>Zero installation in browser</li>
-            <li>PGlite WASM client DB</li>
+            <li>Workspace PG (WASM) client DB</li>
             <li>One-click link sharing</li>
             <li>Instant team onboarding</li>
           </ul>

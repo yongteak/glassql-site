@@ -132,7 +132,7 @@ export function DownloadPage() {
               </div>
               <div className="flex items-center gap-2.5">
                 <IconCheck className="size-4 text-[#1f8a65]" />
-                <span>Native DuckDB & PGlite-Oxide embedded engines</span>
+                <span>Native DuckDB & Workspace PG (WASM) embedded engines</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <IconCheck className="size-4 text-[#1f8a65]" />

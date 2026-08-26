@@ -57,7 +57,7 @@ export function DeviceFrame({
         <div className="flex items-center gap-2">
           <div className="flex h-5 items-center rounded-full bg-white border border-[#e6e5e0] px-2.5">
             <span className="size-1.5 rounded-full bg-[#1f8a65] mr-1.5" />
-            <span className="font-mono text-[10px] text-[#5a5852]">PGlite WASM</span>
+            <span className="font-mono text-[10px] text-[#5a5852]">Workspace PG (WASM)</span>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ export function AboutPage() {
               Most database tools are point-to-point clients designed for a single developer connected directly to a live PostgreSQL or MySQL instance. When teams grow, this model fails: sharing credentials causes security leaks, heavy joins degrade production performance, and context is lost across isolated chat channels.
             </p>
             <p>
-              GlasSQL solves this by treating data operations as a workspace-level operating system. Instead of granting database access, data teams curate bounded, verifiable snapshots. Everyone runs identical SQL in client-side PostgreSQL WASM (PGlite) or DuckDB engines.
+              GlasSQL solves this by treating data operations as a workspace-level operating system. Instead of granting database access, data teams curate bounded, verifiable snapshots. Everyone runs identical SQL in Workspace PG (WASM) or DuckDB engines.
             </p>
           </section>
 

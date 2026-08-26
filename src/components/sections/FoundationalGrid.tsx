@@ -11,8 +11,8 @@ const PILLARS = [
     kicker: "01 / Isolation",
     title: "Queryable Replicas",
     description:
-      "Share scoped data snapshots instead of sensitive database credentials. Clients run client-side PostgreSQL WASM (PGlite) locally with zero performance impact or table locks on production.",
-    badge: "PGlite WASM Engine",
+      "Share scoped data snapshots instead of sensitive database credentials. Clients run Workspace PG (WASM) locally with zero performance impact or table locks on production.",
+    badge: "Workspace PG (WASM)",
   },
   {
     icon: IconCode,

@@ -31,7 +31,7 @@ export const DOC_ARTICLES: DocArticle[] = [
       },
       {
         type: "p",
-        text: "GlasSQL provides two coordinated client experiences: GlasSQL Web (runs client-side via PGlite WASM with zero installation) and GlasSQL Desktop (built with Tauri v2 for offline local execution, native DB drivers, and air-gapped environments). Both share identical query templates, variable definitions, and snapshot replay capabilities.",
+        text: "GlasSQL provides two coordinated client experiences: GlasSQL Web (runs client-side via Workspace PG (WASM) with zero installation) and GlasSQL Desktop (built with Tauri v2 for offline local execution, native DB drivers, and air-gapped environments). Both share identical query templates, variable definitions, and snapshot replay capabilities.",
       },
       {
         type: "h2",
@@ -58,11 +58,11 @@ export const DOC_ARTICLES: DocArticle[] = [
       },
       {
         type: "h2",
-        text: "Embedded PGlite Engine",
+        text: "Workspace PG (WASM)",
       },
       {
         type: "p",
-        text: "When a team member or client opens a snapshot, GlasSQL hydrates an in-memory PostgreSQL instance powered by PGlite WASM (or pglite-oxide in desktop mode). All queries execute locally with 100% PostgreSQL SQL dialect compatibility.",
+        text: "When a team member or client opens a snapshot, GlasSQL hydrates an in-memory PostgreSQL instance powered by Workspace PG (WASM). All queries execute locally with 100% PostgreSQL SQL dialect compatibility.",
       },
       {
         type: "h2",

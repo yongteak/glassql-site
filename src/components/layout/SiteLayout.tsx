@@ -4,6 +4,7 @@
  */
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { ToastProvider } from "@/context/ToastContext";
 import { trackPageView } from "@/lib/analytics";
 import { ScrollToTop } from "./ScrollToTop";
 import { SiteFooter } from "./SiteFooter";
@@ -17,13 +18,15 @@ export function SiteLayout() {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#f7f7f4] text-[#26251e]">
-      <ScrollToTop />
-      <SiteHeader />
-      <main id="content" className="flex-1">
-        <Outlet />
-      </main>
-      <SiteFooter />
-    </div>
+    <ToastProvider>
+      <div className="flex min-h-screen flex-col bg-[#f7f7f4] text-[#26251e]">
+        <ScrollToTop />
+        <SiteHeader />
+        <main id="content" className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
+    </ToastProvider>
   );
 }

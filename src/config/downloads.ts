@@ -32,7 +32,7 @@ export const DOWNLOADS: DownloadTarget[] = [
   {
     id: "web",
     name: "Web Workbench",
-    description: "Zero-install full SQL workbench in modern browsers. Powered by PGlite WASM.",
+    description: "Zero-install full SQL workbench in modern browsers. Powered by Workspace PG (WASM).",
     href: APP_ORIGIN,
     available: true,
     stub: false,

@@ -20,7 +20,7 @@ export function BlogPage() {
       <PageShell>
         <PageIntro
           title="Insights on data operations & local SQL engines."
-          lead="Read about our design decisions, PGlite WASM performance benchmarks, and zero-risk data collaboration patterns."
+          lead="Read about our design decisions, Workspace PG (WASM) performance benchmarks, and zero-risk data collaboration patterns."
         />
 
         <div className="space-y-6 pb-24 max-w-4xl">

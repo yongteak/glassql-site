@@ -16,6 +16,7 @@ import { NotFoundPage } from "@/pages/NotFoundPage";
 import { PricingPage } from "@/pages/PricingPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { ProductPage } from "@/pages/ProductPage";
+import { RoadmapPage } from "@/pages/RoadmapPage";
 import { TermsPage } from "@/pages/TermsPage";
 
 export function App() {
@@ -30,6 +31,7 @@ export function App() {
         <Route path="docs/:slug" element={<DocsArticlePage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />
+        <Route path="roadmap" element={<RoadmapPage />} />
         <Route path="changelog" element={<ChangelogPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="terms" element={<TermsPage />} />

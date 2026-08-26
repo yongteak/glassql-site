@@ -21,7 +21,7 @@ export function ProductPage() {
       <PageShell>
         <PageIntro
           title="Engineered for safe, reproducible data operations."
-          lead="GlasSQL replaces loose SQL scratchpads and risky database credentials with versioned query templates, client-side PGlite WASM replicas, and automated query endpoints."
+          lead="GlasSQL replaces loose SQL scratchpads and risky database credentials with versioned query templates, Workspace PG (WASM) replicas, and automated query endpoints."
         >
           <SurfaceButton href="#snapshots" tone="dark" size="md">
             <span>Explore Features</span>

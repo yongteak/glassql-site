@@ -71,7 +71,7 @@ export const TERMS: LegalDocument = {
       blocks: [
         {
           type: "p",
-          text: `Data snapshots and query computations run client-side on user machines via embedded engines (PGlite, DuckDB). ${product} does not inspect or retain private analytical data payloads beyond necessary metadata and audit logs.`,
+          text: `Data snapshots and query computations run client-side on user machines via embedded engines (Workspace PG (WASM), DuckDB). ${product} does not inspect or retain private analytical data payloads beyond necessary metadata and audit logs.`,
         },
       ],
     },
@@ -129,7 +129,7 @@ export const PRIVACY: LegalDocument = {
       blocks: [
         {
           type: "p",
-          text: "Database query results generated within local PGlite or DuckDB instances are processed locally in the user's browser or desktop client and are not transmitted to GlasSQL servers unless explicitly published as a shared dataset.",
+          text: "Database query results generated within local Workspace PG (WASM) or DuckDB instances are processed locally in the user's browser or desktop client and are not transmitted to GlasSQL servers unless explicitly published as a shared dataset.",
         },
       ],
     },

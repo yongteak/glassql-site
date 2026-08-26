@@ -17,7 +17,7 @@ export const CHANGELOG: ChangelogEntry[] = [
     title: "Initial Public Preview: Web & Desktop Runtimes",
     items: [
       "Public marketing origin at glassql.app and web workbench at my.glassql.app",
-      "Embedded PGlite WASM client engine with instant snapshot hydration",
+      "Embedded Workspace PG (WASM) client engine with instant snapshot hydration",
       "Query Templates with commit history, folder hierarchy, and owner locks",
       "Variable binding syntax {{key}} with workspace and query scopes",
       "Schema Explorer with interactive DDL generation and data preview",

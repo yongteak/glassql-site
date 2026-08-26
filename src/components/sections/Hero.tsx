@@ -4,7 +4,7 @@
  *   Ink primary CTA, and white IDE mockup on warm cream canvas.
  */
 import { Link } from "react-router-dom";
-import { APP_ORIGIN } from "@/config/site";
+import { APP_ORIGIN, PRODUCT_GA_VERSION, PRODUCT_VERSION } from "@/config/site";
 import { trackEvent } from "@/lib/analytics";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
 import { IconArrowRight, IconDownload, IconExternalLink, IconSparkles } from "@/components/ui/Icons";
@@ -20,15 +20,21 @@ export function Hero() {
     <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-[#f7f7f4]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 text-center">
         {/* Release Announcement Pill */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#e6e5e0] bg-white px-3.5 py-1 text-xs text-[#5a5852] hover:border-[#cfcdc4] transition-all mb-8 shadow-none">
-          <span className="flex size-1.5 rounded-full bg-[#f54e00]" />
-          <span className="font-mono text-[11px] font-semibold text-[#f54e00]">GlasSQL 0.9.0</span>
+        <Link
+          to="/roadmap"
+          className="group inline-flex items-center gap-2 rounded-full border border-[#e6e5e0] bg-white px-3.5 py-1 text-xs text-[#5a5852] hover:border-[#cfcdc4] transition-all mb-8 shadow-none"
+        >
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#f54e00] px-2 py-0.5 text-[10px] font-medium text-white">
+            <IconSparkles className="size-2.5 text-white" />
+            Roadmap
+          </span>
+          <span className="font-mono text-[11px] font-semibold text-[#26251e]">
+            v{PRODUCT_VERSION}
+          </span>
           <span className="text-[#cfcdc4]">·</span>
-          <span>Web & Desktop Runtimes</span>
-          <Link to="/changelog" className="font-medium text-[#26251e] hover:underline inline-flex items-center gap-0.5 ml-1">
-            Changelog <IconArrowRight className="size-3" />
-          </Link>
-        </div>
+          <span>{PRODUCT_GA_VERSION} GA in October</span>
+          <IconArrowRight className="size-3 text-[#807d72] group-hover:text-[#26251e]" />
+        </Link>
 
         {/* Big Editorial Headline (weight 400, negative tracking) */}
         <h1 className="mx-auto max-w-3xl text-4xl font-normal tracking-[-0.035em] text-[#26251e] sm:text-6xl sm:leading-[1.1] lg:text-7xl">
@@ -69,7 +75,7 @@ export function Hero() {
 
         {/* Centered IDE Mockup Card */}
         <div className="mt-14 sm:mt-18">
-          <DeviceFrame kind="web" title="GlasSQL Workbench — Acme Analytics" subtitle="PGlite WASM Active">
+          <DeviceFrame kind="web" title="GlasSQL Workbench — Acme Analytics" subtitle="Workspace PG (WASM) Active">
             <ProductMock variant="hero-workbench" />
           </DeviceFrame>
         </div>

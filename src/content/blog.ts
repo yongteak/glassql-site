@@ -34,7 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        text: "GlasSQL introduces a third path: scoped, queryable replicas. Data owners extract bounded slices of data into encrypted snapshots. Consumers open them in browser or desktop using client-side PostgreSQL WASM (PGlite). Everyone operates on the same reproducible context with zero production database risk.",
+        text: "GlasSQL introduces a third path: scoped, queryable replicas. Data owners extract bounded slices of data into encrypted snapshots. Consumers open them in browser or desktop using Workspace PG (WASM). Everyone operates on the same reproducible context with zero production database risk.",
       },
       {
         type: "h2",
@@ -63,7 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        text: "With GlasSQL snapshots, queries run entirely on the recipient's machine using PGlite or DuckDB. If an analyst writes an expensive triple-nested JOIN, it consumes only local CPU cycles. The production cluster never notices.",
+        text: "With GlasSQL snapshots, queries run entirely on the recipient's machine using Workspace PG (WASM) or DuckDB. If an analyst writes an expensive triple-nested JOIN, it consumes only local CPU cycles. The production cluster never notices.",
       },
       {
         type: "h2",

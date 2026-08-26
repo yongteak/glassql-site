@@ -2,7 +2,8 @@
  * @file PricingPage.tsx
  * @description Cursor-styled pricing tiers (100% Free Workbench, Open Source Soon, Enterprise Governance).
  */
-import { APP_ORIGIN, ENTERPRISE_EMAIL } from "@/config/site";
+import { APP_ORIGIN, ENTERPRISE_EMAIL, PRODUCT_GA_VERSION } from "@/config/site";
+import { useToast } from "@/context/ToastContext";
 import { trackEvent } from "@/lib/analytics";
 import { DocumentTitle } from "@/components/layout/DocumentTitle";
 import { PageIntro, PageShell } from "@/components/layout/PageShell";
@@ -23,7 +24,7 @@ const TIERS = [
     highlight: true,
     badge: "100% Free",
     features: [
-      "Zero-install Web workbench (PGlite WASM)",
+      "Zero-install Web workbench (Workspace PG (WASM))",
       "Native Desktop app (macOS, Windows, Linux)",
       "Unlimited workspaces & collaborators",
       "Scoped snapshot extraction & queryable replicas",
@@ -84,15 +85,15 @@ const TIERS = [
 const FAQS = [
   {
     q: "Is GlasSQL really completely free?",
-    a: "Yes. GlasSQL is 100% free for both Web and Desktop workbenches. You can create workspaces, extract data snapshots, run client-side PGlite WASM queries, publish Query Endpoints, and connect AI coding agents via MCP with zero cost.",
+    a: "Yes. GlasSQL is 100% free for both Web and Desktop workbenches. You can create workspaces, extract data snapshots, run Workspace PG (WASM) queries, publish Query Endpoints, and connect AI coding agents via MCP with zero cost.",
   },
   {
-    q: "When will the Open Source core be available?",
-    a: "The open source repository, Docker images, and self-hosted deployment guides are currently in preparation and will be published soon on GitHub.",
+    q: `When will the Open Source core be available?`,
+    a: `The open source repository, Docker images, and self-hosted deployment guides ship with GlasSQL ${PRODUCT_GA_VERSION} general availability.`,
   },
   {
     q: "Does GlasSQL require connecting my live production database to the cloud?",
-    a: "No. GlasSQL operates by extracting scoped data snapshots which are hydrated inside client-side embedded PostgreSQL WASM (PGlite) or DuckDB engines. Your live production database credentials are never shared with collaborators or external partners.",
+    a: "No. GlasSQL operates by extracting scoped data snapshots which are hydrated inside Workspace PG (WASM) or DuckDB engines. Your live production database credentials are never shared with collaborators or external partners.",
   },
   {
     q: "How does the Model Context Protocol (MCP) work with Cursor?",
@@ -101,6 +102,8 @@ const FAQS = [
 ];
 
 export function PricingPage() {
+  const { showComingSoon } = useToast();
+
   const handleCtaClick = (tierName: string) => {
     trackEvent("sign_up_click", { location: "pricing_card", text: tierName });
   };
@@ -180,9 +183,13 @@ export function PricingPage() {
 
                 <div className="mt-10">
                   {isDisabled ? (
-                    <div className="w-full text-center py-2.5 font-sans text-sm font-medium rounded-md bg-[#efeee8] text-[#807d72] cursor-not-allowed">
+                    <button
+                      type="button"
+                      onClick={() => showComingSoon("github")}
+                      className="w-full text-center py-2.5 font-sans text-sm font-medium rounded-md bg-[#efeee8] text-[#807d72] hover:bg-[#e6e5e0] hover:text-[#26251e] transition-colors"
+                    >
                       <span>{tier.cta}</span>
-                    </div>
+                    </button>
                   ) : tier.isExternal ? (
                     <a
                       href={tier.ctaHref}

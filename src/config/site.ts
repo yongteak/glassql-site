@@ -6,6 +6,12 @@
 /** Canonical product display name */
 export const SITE_NAME = "GlasSQL";
 
+/** Current public product version shown on marketing surfaces */
+export const PRODUCT_VERSION = "0.9.0";
+
+/** Open source and official channels ship with this release */
+export const PRODUCT_GA_VERSION = "1.0";
+
 /** Product subtitle / descriptor */
 export const SITE_SUBTITLE = "Workspace Data Operations Platform";
 
@@ -51,7 +57,7 @@ export const NAV_LINKS = [
   { to: "/pricing", label: "Pricing" },
   { to: "/docs", label: "Docs" },
   { to: "/blog", label: "Blog" },
-  { to: "/changelog", label: "Changelog" },
+  { to: "/roadmap", label: "Roadmap" },
 ] as const;
 
 /** Social links */

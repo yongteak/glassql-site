@@ -3,7 +3,7 @@
  * @description Cursor-styled footer on warm cream canvas (#f7f7f4) with 5-column layout.
  */
 import { Link } from "react-router-dom";
-import { APP_ORIGIN, CONTACT_EMAIL, OPERATOR, SITE_NAME } from "@/config/site";
+import { APP_ORIGIN, CONTACT_EMAIL, SITE_NAME } from "@/config/site";
 import { BrandWordmark } from "@/components/ui/BrandWordmark";
 import { SocialLinks } from "./SocialLinks";
 
@@ -93,6 +93,11 @@ export function SiteFooter() {
               <li>
                 <Link to="/blog" className="hover:text-[#26251e] transition-colors">
                   Engineering Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/roadmap" className="hover:text-[#26251e] transition-colors">
+                  Roadmap
                 </Link>
               </li>
               <li>
