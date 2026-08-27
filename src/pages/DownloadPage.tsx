@@ -69,9 +69,12 @@ export function DownloadPage() {
                     </div>
                   )}
 
-                  {item.soonHint && (
+                  {item.soonHint ? (
                     <p className="text-xs text-[#807d72] mb-6 italic">{item.soonHint}</p>
-                  )}
+                  ) : null}
+                  {item.installNote ? (
+                    <p className="text-xs leading-relaxed text-[#807d72] mb-6 font-normal">{item.installNote}</p>
+                  ) : null}
                 </div>
 
                 <div className="pt-4 border-t border-[#e6e5e0] flex items-center justify-between">
@@ -87,16 +90,21 @@ export function DownloadPage() {
                       <IconExternalLink className="size-3.5" />
                     </a>
                   ) : isMac ? (
-                    <SurfaceButton
-                      href={item.href}
-                      disabled={item.stub}
-                      tone="dark"
-                      size="md"
-                      onClick={() => handleDownloadClick("macos")}
-                    >
-                      <IconDownload className="size-4" />
-                      <span>{item.cta}</span>
-                    </SurfaceButton>
+                    item.stub || !item.href ? (
+                      <SurfaceButton href="" disabled tone="dark" size="md">
+                        <IconDownload className="size-4" />
+                        <span>{item.cta}</span>
+                      </SurfaceButton>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={() => handleDownloadClick("macos")}
+                        className="inline-flex items-center gap-2 rounded-md bg-[#26251e] px-4 py-2 font-sans text-sm font-medium text-[#f7f7f4] hover:bg-[#383730] transition-colors"
+                      >
+                        <IconDownload className="size-4" />
+                        <span>{item.cta}</span>
+                      </a>
+                    )
                   ) : isMcp ? (
                     <SurfaceButton to={item.href} tone="secondary" size="md">
                       <IconSparkles className="size-3.5 text-[#f54e00]" />

@@ -70,7 +70,7 @@ export function PlatformRow() {
                     </SurfaceButton>
                   )}
                   <span className="font-mono text-xs text-[#807d72]">
-                    {isWeb ? "Zero installation" : "macOS 12.0+ (ARM64 / x64)"}
+                    {isWeb ? "Zero installation" : "macOS 12.0+ · Apple Silicon"}
                   </span>
                 </div>
               </div>

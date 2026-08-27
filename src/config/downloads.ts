@@ -3,7 +3,10 @@
  * @description Client and integration destinations for GlasSQL (Web, macOS, Windows, Linux, MCP).
  */
 
-import { APP_ORIGIN } from "@/config/site";
+import { APP_ORIGIN, PRODUCT_VERSION } from "@/config/site";
+
+/** Cloudflare R2 공식 설치 파일. 버전 숫자가 없는 latest alias라 사이트 재배포 없이 교체됨 */
+export const MACOS_DMG_HREF = "https://downloads.glassql.app/macos/stable/latest.dmg";
 
 export type DownloadTarget = {
   /** Stable id used in keys and anchors */
@@ -26,6 +29,8 @@ export type DownloadTarget = {
   command?: string;
   /** Copy for the empty preview well when Soon */
   soonHint?: string;
+  /** 설치 안내. 재설치·다운그레이드 정책 */
+  installNote?: string;
 };
 
 export const DOWNLOADS: DownloadTarget[] = [
@@ -43,11 +48,13 @@ export const DOWNLOADS: DownloadTarget[] = [
     id: "macos",
     name: "macOS Desktop",
     description: "Native Tauri v2 desktop app. Full offline mode, air-gap support, tray menu, and native drivers.",
-    href: "",
+    href: MACOS_DMG_HREF,
     available: true,
-    stub: true,
+    stub: false,
     cta: "Download for macOS",
-    badge: "v0.1.0 Apple Silicon / Intel",
+    badge: `v${PRODUCT_VERSION} Apple Silicon`,
+    installNote:
+      "Installing over an existing GlassQL.app keeps local settings. Downgrading to an older build is not supported.",
   },
   {
     id: "windows",
