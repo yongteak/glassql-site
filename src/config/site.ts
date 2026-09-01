@@ -20,7 +20,7 @@ export const SITE_TAGLINE = "Query snapshots—not production.";
 
 /** Default meta description */
 export const SITE_DESCRIPTION =
-  "GlasSQL is a workspace data operations platform. Publish scoped snapshots, run SQL, explore schemas, and ship queryable replicas with 3-tier audits, MCP AI integration, and query endpoints.";
+  "GlasSQL is an open source, free workspace data operations platform. Publish scoped snapshots, run SQL, explore schemas, and ship queryable replicas with 3-tier audits, MCP AI integration, and query endpoints.";
 
 /** Production app origin. Header CTA, Hero primary CTA, and web download point here */
 export const APP_ORIGIN = "https://my.glassql.app";

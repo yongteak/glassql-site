@@ -46,7 +46,7 @@ export function Hero() {
 
         {/* Subhead */}
         <p className="mx-auto mt-6 max-w-xl text-base text-[#5a5852] sm:text-lg sm:leading-relaxed font-normal">
-          Publish a scoped snapshot. Run SQL in the browser or on desktop.
+          Open source and free forever. Publish a scoped snapshot, then run SQL in the browser or on desktop.
         </p>
 
         {/* Action CTAs: Orange Primary + Ink Download + Secondary MCP */}

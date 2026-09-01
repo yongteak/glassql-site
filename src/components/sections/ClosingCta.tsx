@@ -16,8 +16,8 @@ type ClosingCtaProps = {
 };
 
 export function ClosingCta({
-  title = "Start operating data with confidence today.",
-  body = "Launch the web workbench instantly with Workspace PG (WASM), or download the native desktop application for offline air-gap workflows.",
+  title = "Open source. Free forever. Start today.",
+  body = "GlasSQL is free for everyone — no seats, no license fees. Launch the web workbench instantly with Workspace PG (WASM), or download the native desktop app for offline air-gap workflows.",
   primaryCtaText = "Open Web App",
   secondaryCtaText = "Download Desktop",
 }: ClosingCtaProps) {

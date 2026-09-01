@@ -2,18 +2,17 @@
  * @file AboutPage.tsx
  * @description GlasSQL mission and operator info in Cursor style.
  */
-import { CONTACT_EMAIL, OPERATOR } from "@/config/site";
+import { CONTACT_EMAIL } from "@/config/site";
 import { DocumentTitle } from "@/components/layout/DocumentTitle";
 import { PageIntro, PageShell } from "@/components/layout/PageShell";
 import { ClosingCta } from "@/components/sections/ClosingCta";
-import { IconShield } from "@/components/ui/Icons";
 
 export function AboutPage() {
   return (
     <>
       <DocumentTitle
         title="About & Mission"
-        description="Our mission to make data operations safe, collaborative, and accessible without production database exposure."
+        description="Our mission to make data operations safe, collaborative, and free. GlasSQL is open source — no seats, no license fees, no production database exposure."
       />
 
       <PageShell>
@@ -30,6 +29,13 @@ export function AboutPage() {
             </p>
             <p>
               GlasSQL solves this by treating data operations as a workspace-level operating system. Instead of granting database access, data teams curate bounded, verifiable snapshots. Everyone runs identical SQL in Workspace PG (WASM) or DuckDB engines.
+            </p>
+          </section>
+
+          <section className="space-y-4 text-base leading-relaxed text-[#5a5852] font-normal">
+            <h2 className="text-2xl font-normal text-[#26251e] tracking-tight">Open source and free</h2>
+            <p>
+              GlasSQL is open source and free for everyone — no seat licenses, no usage caps, no credit card. Web and desktop workbenches ship the full product at zero cost, and the source is yours to inspect, fork, and self-host.
             </p>
           </section>
 

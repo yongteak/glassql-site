@@ -85,7 +85,7 @@ const TIERS = [
 const FAQS = [
   {
     q: "Is GlasSQL really completely free?",
-    a: "Yes. GlasSQL is 100% free for both Web and Desktop workbenches. You can create workspaces, extract data snapshots, run Workspace PG (WASM) queries, publish Query Endpoints, and connect AI coding agents via MCP with zero cost.",
+    a: "Yes. GlasSQL is open source and 100% free for both Web and Desktop workbenches — no seats, no license fees. You can create workspaces, extract data snapshots, run Workspace PG (WASM) queries, publish Query Endpoints, and connect AI coding agents via MCP with zero cost.",
   },
   {
     q: `When will the Open Source core be available?`,
@@ -112,13 +112,13 @@ export function PricingPage() {
     <>
       <DocumentTitle
         title="Pricing & Plans"
-        description="GlasSQL is completely free to use. Explore our Web, Desktop, Open Source (Soon), and Enterprise capabilities."
+        description="GlasSQL is open source and completely free. Explore our Web, Desktop, Open Source (Soon), and Enterprise capabilities."
       />
 
       <PageShell wide>
         <PageIntro
-          title="Free and accessible for every data team."
-          lead="Collaborate across workspaces, share live queryable replicas, and ship authenticated query endpoints with zero database credential exposure."
+          title="Open source and free for every data team."
+          lead="No seats, no license fees. Collaborate across workspaces, share live queryable replicas, and ship authenticated query endpoints with zero database credential exposure."
         />
 
         {/* Tiers Grid */}

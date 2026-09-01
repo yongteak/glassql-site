@@ -20,7 +20,7 @@ export function SiteFooter() {
               <BrandWordmark />
             </Link>
             <p className="mt-3 text-xs leading-relaxed text-[#5a5852]">
-              Workspace data operations without opening production databases.
+              Open source workspace data operations — free forever, without opening production databases.
             </p>
             <div className="mt-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e6e5e0] bg-white px-2.5 py-0.5 font-mono text-[11px] text-[#26251e]">
