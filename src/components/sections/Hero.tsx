@@ -75,7 +75,7 @@ export function Hero() {
 
         {/* Centered IDE Mockup Card */}
         <div className="mt-14 sm:mt-18">
-          <DeviceFrame kind="web" title="GlasSQL Workbench — Acme Analytics" subtitle="Workspace PG (WASM) Active">
+          <DeviceFrame kind="web" title="GlasSQL Workbench" subtitle="Acme Analytics">
             <ProductMock variant="hero-workbench" />
           </DeviceFrame>
         </div>

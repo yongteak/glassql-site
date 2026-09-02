@@ -3,10 +3,11 @@
  * @description Cursor-styled IDE and workbench mockups with warm-cream panes, crisp syntax highlighting,
  *   and signature AI timeline pastel pills (Thinking, Grep, Read, Edit, Done).
  */
+import type { ReactNode } from "react";
+import { PRODUCT_VERSION } from "@/config/site";
 import { cn } from "@/lib/cn";
 import type { ProductMockVariant } from "@/content/features";
 import {
-  IconCheck,
   IconCode,
   IconCpu,
   IconDatabase,
@@ -14,10 +15,103 @@ import {
   IconLock,
   IconPlay,
   IconShield,
-  IconSparkles,
   IconTable,
   IconTerminal,
 } from "./Icons";
+
+type MockIconProps = {
+  className?: string;
+};
+
+function MockIconFolders({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-4", className)} aria-hidden>
+      <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <path d="M3 11h18" />
+    </svg>
+  );
+}
+
+function MockIconHistory({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-4", className)} aria-hidden>
+      <path d="M3 12a9 9 0 1 0 3-6.7" />
+      <path d="M3 4v5h5" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  );
+}
+
+function MockIconPlug({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-4", className)} aria-hidden>
+      <path d="M12 22v-5" />
+      <path d="M9 8V2" />
+      <path d="M15 8V2" />
+      <path d="M7 8h10v3a5 5 0 0 1-10 0z" />
+    </svg>
+  );
+}
+
+function MockIconCamera({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-4", className)} aria-hidden>
+      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+      <circle cx="12" cy="14" r="3.5" />
+    </svg>
+  );
+}
+
+function MockIconHash({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3.5", className)} aria-hidden>
+      <path d="M5 9h14M5 15h14M9 4 7 20M17 4l-2 16" />
+    </svg>
+  );
+}
+
+function MockIconFileCode({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3.5", className)} aria-hidden>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6" />
+      <path d="m10 13-2 2 2 2" />
+      <path d="m14 13 2 2-2 2" />
+    </svg>
+  );
+}
+
+function MockIconPlus({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3.5", className)} aria-hidden>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
+function MockIconStar({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3.5", className)} aria-hidden>
+      <path d="m12 3 2.6 6.3L21 10l-4.7 4.2L17.5 21 12 17.8 6.5 21l1.2-6.8L3 10l6.4-.7z" />
+    </svg>
+  );
+}
+
+function MockIconChevronDown({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3", className)} aria-hidden>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+function MockIconX({ className }: MockIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cn("size-3", className)} aria-hidden>
+      <path d="M6 6 18 18M18 6 6 18" />
+    </svg>
+  );
+}
 
 type ProductMockProps = {
   variant: ProductMockVariant | "hero-workbench";
@@ -50,231 +144,211 @@ export function ProductMock({ variant, className }: ProductMockProps) {
 }
 
 /**
- * Hero Workbench — Multi-pane IDE mockup (Sidebar + Editor + Agent Timeline + Results)
+ * Hero Workbench — 실제 앱 메인화면(레일 + 쿼리 트리 + 탭/에디터 + 변수 패널 + 푸터)
  */
 function HeroWorkbenchMock({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-col text-left font-sans text-xs select-none bg-white", className)}>
-      {/* Top Workspace Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e6e5e0] bg-[#fafaf7] px-4 py-2">
-        <div className="flex items-center gap-2">
-          <span className="flex size-2 rounded-full bg-[#1f8a65]" />
-          <span className="font-medium text-[#26251e]">Acme Analytics Workspace</span>
-          <span className="rounded bg-[#e6e5e0] px-1.5 py-0.5 font-mono text-[10px] text-[#5a5852]">
-            ws_prod_8492
-          </span>
-        </div>
-        <div className="flex items-center gap-2 font-mono text-[11px]">
-          <span className="text-[#807d72]">Engine:</span>
-          <span className="rounded bg-[#efeee8] border border-[#e6e5e0] px-2 py-0.5 text-[#26251e] font-medium">
-            Workspace PG (WASM) · Client-Side
-          </span>
-          <span className="hidden sm:inline-block text-[#cfcdc4]">|</span>
-          <span className="hidden sm:inline-flex items-center gap-1 text-[#1f8a65] font-medium">
-            <IconSparkles className="size-3" /> MCP Connected
-          </span>
-        </div>
-      </div>
+      <div className="flex min-h-[500px]">
+        {/* Left icon rail */}
+        <aside className="hidden w-14 shrink-0 flex-col border-r border-[#e6e5e0] bg-[#f7f7f4] md:flex">
+          <div className="flex flex-col items-center gap-0.5 px-1 pt-2 pb-3">
+            <HeroRailItem icon={<MockIconFolders className="size-[18px]" />} label="Queries" active />
+            <HeroRailItem icon={<IconTable className="size-[18px]" />} label="Tables" />
+            <HeroRailItem icon={<MockIconHistory className="size-[18px]" />} label="History" />
+            <HeroRailItem icon={<MockIconPlug className="size-[18px]" />} label="API" />
+            <HeroRailItem icon={<MockIconCamera className="size-[18px]" />} label="Snaps" />
+          </div>
+          <div className="mt-auto flex flex-col items-center px-1 pb-3">
+            <span className="flex size-7 items-center justify-center rounded-full bg-[#e6e5e0] text-[10px] font-medium text-[#5a5852]">
+              AK
+            </span>
+          </div>
+        </aside>
 
-      {/* Main Split Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 min-h-[460px]">
-        {/* Left Sidebar */}
-        <div className="hidden md:flex md:col-span-3 flex-col border-r border-[#e6e5e0] bg-[#fafaf7] p-3 text-[#5a5852] font-mono text-[11px]">
-          <div className="mb-2 px-2 text-[10px] font-semibold tracking-wider text-[#807d72] uppercase">
-            Query Templates
-          </div>
-          <div className="space-y-0.5">
-            <div className="flex items-center gap-1.5 rounded bg-white border border-[#e6e5e0] px-2 py-1.5 text-[#26251e] font-medium">
-              <IconCode className="size-3.5 text-[#f54e00]" />
-              <span className="truncate">monthly_revenue.sql</span>
-              <span className="ml-auto rounded bg-[#efeee8] px-1 text-[9px] text-[#5a5852]">v3</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-2 py-1.5 text-[#5a5852] hover:text-[#26251e] hover:bg-white/60 rounded">
-              <IconCode className="size-3.5 text-[#a09c92]" />
-              <span className="truncate">cohort_retention.sql</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-2 py-1.5 text-[#5a5852] hover:text-[#26251e] hover:bg-white/60 rounded">
-              <IconCode className="size-3.5 text-[#a09c92]" />
-              <span className="truncate">churn_risk_score.sql</span>
+        {/* Query tree */}
+        <div className="hidden w-[196px] shrink-0 flex-col border-r border-[#e6e5e0] bg-[#fafaf7] md:flex">
+          <div className="border-b border-[#e6e5e0] px-2.5 py-2">
+            <div className="rounded-md border border-[#e6e5e0] bg-white px-2 py-1.5 text-[11px] text-[#a09c92]">
+              Search queries…
             </div>
           </div>
-
-          <div className="mt-4 mb-2 px-2 text-[10px] font-semibold tracking-wider text-[#807d72] uppercase">
-            Data Snapshots
-          </div>
-          <div className="space-y-0.5">
-            <div className="flex items-center justify-between rounded px-2 py-1.5 text-[#26251e] bg-white border border-[#e6e5e0]">
-              <span className="truncate text-[10.5px]">v2026.08_q3_clean.zip</span>
-              <span className="text-[10px] text-[#807d72]">4.2 MB</span>
+          <div className="flex-1 space-y-3 overflow-hidden px-2 py-3 text-[12px]">
+            <HeroTreeSection label="Shared" />
+            <div>
+              <HeroTreeSection label="Personal" />
+              <div className="mt-0.5">
+                <div className="flex items-center gap-1 px-1 py-1 text-[#5a5852]">
+                  <MockIconChevronDown className="size-3 text-[#a09c92]" />
+                  <span className="truncate">Bot Registry</span>
+                </div>
+                <div className="ml-3 space-y-0.5">
+                  <div className="flex items-center gap-1.5 px-1.5 py-1 text-[#5a5852]">
+                    <MockIconFileCode className="text-[#a09c92]" />
+                    <span className="truncate">ping_plant.sql</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 rounded bg-[#e6e5e0]/70 px-1.5 py-1 font-medium text-[#26251e]">
+                    <MockIconFileCode className="text-[#005a9e]" />
+                    <span className="truncate">active_units.sql</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div className="mt-4 mb-2 px-2 text-[10px] font-semibold tracking-wider text-[#807d72] uppercase">
-            Agent Action Pipeline
-          </div>
-          <div className="space-y-1.5 text-[10.5px]">
-            <div className="flex items-center gap-1.5">
-              <span className="rounded-full bg-[#dfa88f] px-2 py-0.5 font-mono text-[9px] font-semibold text-[#26251e] uppercase">
-                Thinking
-              </span>
-              <span className="text-[#5a5852] truncate">Parse {"{{start_date}}"}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="rounded-full bg-[#9fc9a2] px-2 py-0.5 font-mono text-[9px] font-semibold text-[#26251e] uppercase">
-                Grep
-              </span>
-              <span className="text-[#5a5852] truncate">orders schema</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="rounded-full bg-[#c08532] px-2 py-0.5 font-mono text-[9px] font-semibold text-white uppercase">
-                Done
-              </span>
-              <span className="text-[#1f8a65] font-medium">14ms · 12,480 rows</span>
-            </div>
+            <HeroTreeSection label="System" />
           </div>
         </div>
 
-        {/* Center/Right Workbench Editor & Grid */}
-        <div className="col-span-12 md:col-span-9 flex flex-col bg-white">
-          {/* Tab Bar & Actions */}
-          <div className="flex items-center justify-between border-b border-[#e6e5e0] bg-[#fafaf7] px-3">
-            <div className="flex items-center">
-              <div className="flex items-center gap-2 border-r border-[#e6e5e0] bg-white px-3 py-2 text-[#26251e] font-mono text-[11px] font-medium border-t-2 border-t-[#f54e00]">
-                <span>monthly_revenue.sql</span>
-                <span className="rounded bg-[#efeee8] px-1 text-[9px] text-[#5a5852]">commit: 94ab2f</span>
-              </div>
-              <div className="px-3 py-2 text-[#807d72] font-mono text-[11px] hover:text-[#26251e] cursor-pointer">
-                + New Query
-              </div>
+        {/* Editor canvas */}
+        <div className="flex min-w-0 flex-1 flex-col bg-white">
+          {/* Tabs */}
+          <div className="flex h-10 items-center border-b border-[#e6e5e0] bg-[#fafaf7]">
+            <div className="relative flex h-full items-center gap-2 border-r border-[#e6e5e0] px-3 text-[#807d72]">
+              <MockIconFileCode className="text-[#a09c92]" />
+              <span className="text-[12px]">ping_plant.sql</span>
+              <MockIconX className="text-[#a09c92]" />
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                className="flex items-center gap-1.5 rounded-md bg-[#f54e00] px-3 py-1 font-sans text-[11px] font-medium text-white hover:bg-[#d04200] transition-colors"
-              >
-                <IconPlay className="size-2.5" />
-                <span>Run (⌘Enter)</span>
-              </button>
+            <div className="relative flex h-full items-center gap-2 border-r border-[#e6e5e0] bg-white px-3 text-[#26251e]">
+              <span className="absolute inset-x-0 top-0 h-0.5 bg-[#005a9e]" />
+              <MockIconFileCode className="text-[#005a9e]" />
+              <span className="text-[12px]">active_units.sql</span>
+              <MockIconX className="text-[#a09c92]" />
+            </div>
+            <div className="ml-auto flex h-full items-center px-2 text-[#807d72]">
+              <MockIconPlus />
             </div>
           </div>
 
-          {/* Monaco SQL Editor Area */}
-          <div className="p-4 font-mono text-[12px] leading-relaxed text-[#26251e] bg-white">
-            <div className="flex gap-4">
-              <div className="flex flex-col text-[#a09c92] select-none text-right w-5">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>6</span>
-                <span>7</span>
-                <span>8</span>
+          {/* Title + Save / Run */}
+          <div className="flex items-center justify-between gap-3 border-b border-[#e6e5e0] px-3 py-2">
+            <div className="flex min-w-0 items-center gap-1.5">
+              <MockIconStar className="text-[#a09c92]" />
+              <span className="truncate text-[15px] font-normal text-[#26251e]">active_units</span>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <span className="rounded-sm border border-[#e6e5e0] bg-white px-3 py-1 text-[12px] text-[#26251e]">
+                Save
+              </span>
+              <span className="inline-flex overflow-hidden rounded-sm">
+                <span className="inline-flex items-center gap-1.5 bg-[#005a9e] px-3 py-1 text-[12px] font-medium text-white">
+                  <IconPlay className="size-2.5" />
+                  Run
+                </span>
+                <span className="inline-flex items-center border-l border-white/20 bg-[#005a9e] px-1.5 text-white">
+                  <MockIconChevronDown className="size-3" />
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div className="flex min-h-0 flex-1">
+            {/* SQL editor */}
+            <div className="min-w-0 flex-1 p-3 font-mono text-[12px] leading-relaxed text-[#26251e]">
+              <div className="flex gap-3">
+                <div className="flex w-4 shrink-0 flex-col text-right text-[#a09c92] select-none">
+                  {["1", "2", "3", "4", "5", "6", "7", "8"].map((n) => (
+                    <span key={n}>{n}</span>
+                  ))}
+                </div>
+                <div className="min-w-0 flex-1 overflow-x-auto">
+                  <div>
+                    <span className="font-medium text-[#9333ea]">SELECT</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#26251e]">u.unit_id, u.display_name,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#26251e]">p.plant_code, u.status</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-[#9333ea]">FROM</span>
+                    <span className="text-[#26251e]"> bot_registry.active_units u</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-[#9333ea]">JOIN</span>
+                    <span className="text-[#26251e]"> plants p</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="font-medium text-[#9333ea]">ON</span>
+                    <span className="text-[#26251e]"> p.id = u.plant_id</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-[#9333ea]">WHERE</span>
+                    <span className="text-[#26251e]"> u.status = </span>
+                    <span className="inline-flex rounded border border-[#cfcdc4] bg-[#efeee8] px-1.5 font-semibold text-[#26251e]">
+                      {"{{status}}"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-[#9333ea]">ORDER BY</span>
+                    <span className="text-[#26251e]"> u.updated_at </span>
+                    <span className="font-medium text-[#9333ea]">DESC</span>
+                    <span className="text-[#5a5852]">;</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex-1 overflow-x-auto">
-                <div>
-                  <span className="text-[#9333ea] font-medium">SELECT</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[#0284c7]">date_trunc</span>
-                  <span className="text-[#5a5852]">(</span>
-                  <span className="text-[#d97706]">'month'</span>
-                  <span className="text-[#5a5852]">, o.created_at) </span>
-                  <span className="text-[#9333ea]">AS</span>
-                  <span className="text-[#26251e]"> cohort_month,</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[#0284c7]">count</span>
-                  <span className="text-[#5a5852]">(</span>
-                  <span className="text-[#9333ea]">DISTINCT</span>
-                  <span className="text-[#5a5852]"> o.user_id) </span>
-                  <span className="text-[#9333ea]">AS</span>
-                  <span className="text-[#26251e]"> active_buyers,</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[#0284c7]">sum</span>
-                  <span className="text-[#5a5852]">(o.amount_usd) </span>
-                  <span className="text-[#9333ea]">AS</span>
-                  <span className="text-[#26251e]"> net_revenue</span>
-                </div>
-                <div>
-                  <span className="text-[#9333ea] font-medium">FROM</span>
-                  <span className="text-[#26251e]"> orders o</span>
-                </div>
-                <div>
-                  <span className="text-[#9333ea] font-medium">WHERE</span>
-                  <span className="text-[#26251e]"> o.created_at &gt;= </span>
-                  <span className="inline-flex rounded bg-[#efeee8] border border-[#cfcdc4] px-1.5 py-0.2 text-[#26251e] font-semibold">
-                    {"{{start_date}}"}
-                  </span>
-                  <span className="text-[#9333ea] font-medium"> AND</span>
-                  <span className="text-[#26251e]"> o.tier = </span>
-                  <span className="inline-flex rounded bg-[#efeee8] border border-[#cfcdc4] px-1.5 py-0.2 text-[#26251e] font-semibold">
-                    {"{{tier_filter}}"}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-[#9333ea] font-medium">GROUP BY</span>
-                  <span className="text-[#26251e]"> 1 </span>
-                  <span className="text-[#9333ea] font-medium">ORDER BY</span>
-                  <span className="text-[#26251e]"> 1 </span>
-                  <span className="text-[#9333ea] font-medium">DESC</span>
-                  <span className="text-[#5a5852]">;</span>
-                </div>
+            </div>
+
+            {/* Variables panel */}
+            <div className="hidden w-[220px] shrink-0 flex-col border-l border-[#e6e5e0] bg-[#fafaf7] lg:flex">
+              <div className="flex border-b border-[#e6e5e0] px-3">
+                <span className="border-b-2 border-[#005a9e] px-2 py-2 text-[12px] text-[#26251e]">Query</span>
+                <span className="px-2 py-2 text-[12px] text-[#807d72]">Workspace</span>
+              </div>
+              <div className="px-3 pt-3 text-[10px] leading-relaxed text-[#807d72]">
+                Query-only. When a workspace variable shares the name,{" "}
+                <span className="text-[#5a5852]">this tab wins</span>.
+              </div>
+              <div className="mt-3 overflow-hidden border-y border-[#e6e5e0] bg-white">
+                <table className="w-full text-left text-[11px]">
+                  <thead className="bg-[#fafaf7] text-[#807d72]">
+                    <tr>
+                      <th className="px-2 py-1.5 font-normal">Key</th>
+                      <th className="px-2 py-1.5 font-normal">Value</th>
+                      <th className="px-2 py-1.5 font-normal">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-[#efeee8] text-[#26251e]">
+                      <td className="px-2 py-1.5 font-mono">status</td>
+                      <td className="px-2 py-1.5 font-mono">active</td>
+                      <td className="px-2 py-1.5 text-[#807d72]">string</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
 
-          {/* Results Table Panel */}
-          <div className="flex-1 border-t border-[#e6e5e0] bg-[#fafaf7] flex flex-col">
-            <div className="flex items-center justify-between border-b border-[#e6e5e0] bg-[#efeee8]/60 px-3 py-1.5">
-              <div className="flex items-center gap-2">
-                <span className="font-sans font-semibold text-[#26251e] text-[11px]">Results Grid</span>
-                <span className="rounded bg-[#1f8a65]/10 px-1.5 py-0.2 font-mono text-[10px] text-[#1f8a65] font-medium">
-                  ⚡ 14ms · 12,480 rows
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="rounded border border-[#e6e5e0] bg-white px-2 py-0.5 font-mono text-[10px] text-[#5a5852] hover:text-[#26251e] cursor-pointer">
-                  Export CSV
-                </span>
-                <span className="rounded border border-[#e6e5e0] bg-white px-2 py-0.5 font-mono text-[10px] text-[#5a5852] hover:text-[#26251e] cursor-pointer">
-                  Export JSON
-                </span>
-                <span className="rounded border border-[#cfcdc4] bg-white px-2 py-0.5 font-mono text-[10px] text-[#f54e00] font-medium hover:bg-[#fafaf7] cursor-pointer">
-                  Share Link 🔗
-                </span>
-              </div>
+          {/* Result strip */}
+          <div className="border-t border-[#e6e5e0] bg-[#fafaf7]">
+            <div className="flex items-center gap-2 border-b border-[#e6e5e0] px-3 py-1.5">
+              <span className="text-[11px] font-medium text-[#26251e]">Result</span>
+              <span className="rounded bg-[#1f8a65]/10 px-1.5 py-0.5 font-mono text-[10px] font-medium text-[#1f8a65]">
+                14ms · 3 rows
+              </span>
             </div>
-
-            <div className="overflow-x-auto font-mono text-[11px] bg-white">
+            <div className="overflow-x-auto bg-white font-mono text-[11px]">
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-[#e6e5e0] bg-[#fafaf7] text-[#5a5852]">
-                    <th className="px-3 py-2 font-medium">cohort_month</th>
-                    <th className="px-3 py-2 font-medium">active_buyers</th>
-                    <th className="px-3 py-2 font-medium">net_revenue</th>
-                    <th className="px-3 py-2 font-medium">status</th>
+                    <th className="px-3 py-1.5 font-medium">unit_id</th>
+                    <th className="px-3 py-1.5 font-medium">display_name</th>
+                    <th className="px-3 py-1.5 font-medium">plant_code</th>
+                    <th className="px-3 py-1.5 font-medium">status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#efeee8] text-[#26251e]">
                   <tr>
-                    <td className="px-3 py-1.5 text-[#0284c7]">2026-08-01</td>
-                    <td className="px-3 py-1.5">3,492</td>
-                    <td className="px-3 py-1.5 text-[#1f8a65] font-medium">$184,920.00</td>
-                    <td className="px-3 py-1.5 text-[#807d72]">settled</td>
+                    <td className="px-3 py-1 text-[#0284c7]">unit-104</td>
+                    <td className="px-3 py-1">Line A Pack</td>
+                    <td className="px-3 py-1">PLT-SEOUL</td>
+                    <td className="px-3 py-1 text-[#1f8a65]">active</td>
                   </tr>
                   <tr>
-                    <td className="px-3 py-1.5 text-[#0284c7]">2026-07-01</td>
-                    <td className="px-3 py-1.5">3,120</td>
-                    <td className="px-3 py-1.5 text-[#1f8a65] font-medium">$162,400.00</td>
-                    <td className="px-3 py-1.5 text-[#807d72]">settled</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-1.5 text-[#0284c7]">2026-06-01</td>
-                    <td className="px-3 py-1.5">2,980</td>
-                    <td className="px-3 py-1.5 text-[#1f8a65] font-medium">$148,850.00</td>
-                    <td className="px-3 py-1.5 text-[#807d72]">settled</td>
+                    <td className="px-3 py-1 text-[#0284c7]">unit-218</td>
+                    <td className="px-3 py-1">Line B Sort</td>
+                    <td className="px-3 py-1">PLT-BUSAN</td>
+                    <td className="px-3 py-1 text-[#1f8a65]">active</td>
                   </tr>
                 </tbody>
               </table>
@@ -282,6 +356,57 @@ function HeroWorkbenchMock({ className }: { className?: string }) {
           </div>
         </div>
       </div>
+
+      {/* Status footer */}
+      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 border-t border-[#e6e5e0] bg-[#fafaf7] px-2 py-1 text-[11px] text-[#807d72]">
+        <span className="inline-flex items-center gap-1 font-medium text-[#26251e]/80">
+          <span className="size-1 rounded-full bg-[#1f8a65]" />
+          Connected
+        </span>
+        <span className="text-[#cfcdc4]">|</span>
+        <span className="font-medium text-[#26251e]/90">Postgres 18.3</span>
+        <span className="text-[#cfcdc4]">|</span>
+        <span>
+          <span className="font-medium text-[#26251e]/85">Live</span>
+          <span> · No base snapshot</span>
+        </span>
+        <span className="ml-auto tabular-nums text-[10px]">v{PRODUCT_VERSION}</span>
+      </div>
+    </div>
+  );
+}
+
+function HeroRailItem({
+  icon,
+  label,
+  active = false,
+}: {
+  icon: ReactNode;
+  label: string;
+  active?: boolean;
+}) {
+  return (
+    <div className="flex w-full flex-col items-center justify-center gap-1 py-1.5 text-center">
+      <span
+        className={cn(
+          "flex size-9 items-center justify-center rounded-lg",
+          active ? "bg-[#26251e]/10 text-[#26251e]" : "text-[#807d72]",
+        )}
+      >
+        {icon}
+      </span>
+      <span className={cn("text-[10px] leading-none", active ? "text-[#26251e]" : "text-[#807d72]")}>
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function HeroTreeSection({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-1 px-1 py-0.5 text-[13px] tracking-tight text-[#26251e]/80">
+      <MockIconHash className="text-[#a09c92]" />
+      <span>{label}</span>
     </div>
   );
 }
